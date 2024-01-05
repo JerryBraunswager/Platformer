@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class Enemy : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Transform _startPosition;
     [SerializeField] private Transform _endPosition;
