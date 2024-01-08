@@ -28,9 +28,4 @@ public class Player : MonoBehaviour
         _animator.SetFloat(nameof(_direction), _direction);
         _rigidbody.velocity = new Vector2(_direction * Time.deltaTime * _speed, Input.GetAxis(Jump) * _jumpForce);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-    }
 }

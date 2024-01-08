@@ -64,6 +64,8 @@
     <Compile Include="Assets\Scripts\CoinSpawner.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Actor.cs" />
+    <Compile Include="Assets\Scripts\HealthKit.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
