@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 7288627054777218098}
   - component: {fileID: 8264714345911732704}
   - component: {fileID: 6421528725527651999}
-  - component: {fileID: 6027973865895578919}
+  - component: {fileID: 7478530720140325096}
   m_Layer: 7
   m_Name: Hero
   m_TagString: Untagged
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _damage: 10
---- !u!114 &6027973865895578919
+--- !u!114 &7478530720140325096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -467,8 +467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _workTime: 6
-  _healthAmount: 3
-  _radius: 5
+  _healthAmount: 6
+  _radius: 3
+  _key: 113
 --- !u!1 &6600954734293047561
 GameObject:
   m_ObjectHideFlags: 0
