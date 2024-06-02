@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4867207555568079815}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4424244415131300984}
   - component: {fileID: 5341265744550327671}
   - component: {fileID: 9196024877367122496}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 8832498661060499330}
   - component: {fileID: 2490476468611289512}
   - component: {fileID: 5894375748604787199}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 3257413702403333977}
   - component: {fileID: 684867529763858897}
   - component: {fileID: 5566142656401076456}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: BuyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 6780463520256554935}
   - component: {fileID: 708381397379809575}
   - component: {fileID: 2451066689769075859}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 747985554924454879}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 1231832548053326698}
   - component: {fileID: 5439601096966639446}
   - component: {fileID: 8324758065495809675}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 1569355564521038578}
   - component: {fileID: 4672824620740936340}
   - component: {fileID: 1070570215098500715}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,9 +12,6 @@ public class Actor : MonoBehaviour
     [SerializeField] private float _damage;
 
     public float Damage => _damage;
-
-    private float _damageCount = 25;
-    private float _healCount = 20;
     private float _currentHealth;
 
     public event UnityAction<float, float> HealthChanged;
@@ -34,11 +31,6 @@ public class Actor : MonoBehaviour
         if (collision.gameObject.TryGetComponent(out Actor enemy))
         {
             TakeDamage(enemy.Damage);
-
-            if(_currentHealth == _minHealth)
-            {
-                Destroy(transform.gameObject);
-            }
         }
     }
 
@@ -54,24 +46,20 @@ public class Actor : MonoBehaviour
         }
     }
 
-    public void ClickTakeDamageButton()
-    {
-        TakeDamage(_damageCount);
-    }
-
-    public void ClickHealButton()
-    {
-        Heal(_healCount);
-    }
-
-    private void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         _currentHealth -= damage;
         _currentHealth = Mathf.Clamp(_currentHealth, _minHealth, _maxHealth);
+
+        if (_currentHealth == _minHealth)
+        {
+            Destroy(transform.gameObject);
+        }
+
         HealthChanged?.Invoke(_currentHealth, _maxHealth);
     }
 
-    private void Heal(float healPower)
+    public void Heal(float healPower)
     {
         _currentHealth += healPower;
         _currentHealth = Mathf.Clamp(_currentHealth, _minHealth, _maxHealth);
