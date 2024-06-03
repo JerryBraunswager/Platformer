@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Actor.cs" />
     <Compile Include="Assets\Scripts\BuyedHealthBar.cs" />
     <Compile Include="Assets\Scripts\HealthKit.cs" />
+    <Compile Include="Assets\Scripts\Controller.cs" />
     <Compile Include="Assets\Scripts\TextHealthBar.cs" />
     <Compile Include="Assets\Scripts\Vampirism.cs" />
   </ItemGroup>

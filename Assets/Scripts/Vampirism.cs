@@ -1,58 +1,79 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Controller))]
 [RequireComponent(typeof(Actor))]
 public class Vampirism : MonoBehaviour
 {
+
     [SerializeField] private float _workTime;
     [SerializeField] private float _healthAmount;
     [SerializeField] private float _radius;
-    [SerializeField] private KeyCode _key;
+    [SerializeField] private float _delay;
 
-    private Actor _hero;
+    private const string EnemyLayer = "Enemy";
+
+    private Controller _controller;
     private Coroutine _coroutine;
     private float _timer = 0f;
+    private WaitForSeconds _delaySeconds;
+    private Actor _player;
 
     private void Awake()
     {
-        _hero = GetComponent<Actor>();
+        _controller = GetComponent<Controller>();
+        _player = GetComponent<Actor>();
     }
 
-    private void Update()
+    private void Start()
     {
-        Debug.Log(_coroutine);
-        if(_coroutine == null && Input.GetKeyDown(_key)) 
+        _delaySeconds = new WaitForSeconds(_delay);
+    }
+
+    private void OnEnable()
+    {
+        _controller.SpellButtonClicked += ActiveSpell;
+    }
+
+    private void OnDisable()
+    {
+        _controller.SpellButtonClicked -= ActiveSpell;
+    }
+
+    private void ActiveSpell()
+    {
+        if(_coroutine == null) 
         {
             _timer = 0f;
-            _coroutine = StartCoroutine(StartWork());
+            _coroutine = StartCoroutine(EnableSpell());
         }
     }
 
-    private IEnumerator StartWork()
+    private IEnumerator EnableSpell()
     {
         while(_timer < _workTime)
         {
-            _timer += Time.deltaTime;
-            GetEnemies();
-            yield return null;
+            _timer += _delay;
+            DamageEnemies();
+            yield return _delaySeconds;
+        }
 
-            if(_timer >= _workTime)
-            {
-                _coroutine = null;
-            }
+        if (_timer >= _workTime)
+        {
+            _coroutine = null;
         }
     }
 
-    private void GetEnemies()
+    private void DamageEnemies()
     {
-        Collider2D[] overlaps = Physics2D.OverlapCircleAll(transform.position, _radius);
+        Collider2D[] overlaps = Physics2D.OverlapCircleAll(transform.position, _radius, LayerMask.GetMask(EnemyLayer));
 
         for (int i = 0; i < overlaps.Length; i++)
         {
             if (overlaps[i].gameObject.TryGetComponent(out Actor actor))
             {
-                actor.TakeDamage(_healthAmount * Time.deltaTime);
-                _hero.Heal(_healthAmount * Time.deltaTime);
+                float damage = actor.TakeDamage(_healthAmount);
+                _player.Heal(damage);
             }
         }
     }

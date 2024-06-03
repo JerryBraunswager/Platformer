@@ -44,17 +44,23 @@ public class Actor : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
+    public float TakeDamage(float damage)
     {
         _currentHealth -= damage;
+        float result = damage + _currentHealth;
         _currentHealth = Mathf.Clamp(_currentHealth, _minHealth, _maxHealth);
 
         if (_currentHealth == _minHealth)
         {
             Destroy(transform.gameObject);
         }
+        else
+        {
+            HealthChanged?.Invoke(_currentHealth, _maxHealth);
+        }
 
-        HealthChanged?.Invoke(_currentHealth, _maxHealth);
+        result = (result > damage) ? damage : result;
+        return result;
     }
 
     public void Heal(float healPower)
