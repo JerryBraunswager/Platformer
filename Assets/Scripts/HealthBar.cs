@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Actor _actor;
 
     private Slider _healthSlider;
+    private float _targetSliderValue;
 
     private void Awake()
     {
@@ -23,8 +24,16 @@ public class HealthBar : MonoBehaviour
         _actor.HealthChanged -= DisplayHealth;
     }
 
+    private void Update()
+    {
+        if(_healthSlider.value != _targetSliderValue)
+        {
+            _healthSlider.value = Mathf.MoveTowards(_healthSlider.value, _targetSliderValue, Time.deltaTime);
+        }
+    }
+
     private void DisplayHealth(float currentHealth, float maxHeath)
     {
-        _healthSlider.value = (float)currentHealth / maxHeath;
+        _targetSliderValue = currentHealth / maxHeath;
     }
 }
