@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Actor))]
 public class Vampirism : MonoBehaviour
 {
-
+    [SerializeField] private ParticleSystem _particleSystem;
     [SerializeField] private float _workTime;
     [SerializeField] private float _healthAmount;
     [SerializeField] private float _radius;
@@ -46,6 +46,7 @@ public class Vampirism : MonoBehaviour
         {
             _timer = 0f;
             _coroutine = StartCoroutine(EnableSpell());
+            _particleSystem.Play();
         }
     }
 
@@ -61,6 +62,7 @@ public class Vampirism : MonoBehaviour
         if (_timer >= _workTime)
         {
             _coroutine = null;
+            _particleSystem.Stop();
         }
     }
 

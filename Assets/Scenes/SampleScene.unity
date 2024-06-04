@@ -2034,9 +2034,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1690154062431128586, guid: 5fe93c31e7db1f7418f5c63d5f0a4f37, type: 3}
-      propertyPath: _spellKey
-      value: 113
+    - target: {fileID: 3023716541872693103, guid: 5fe93c31e7db1f7418f5c63d5f0a4f37, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3023716541872693103, guid: 5fe93c31e7db1f7418f5c63d5f0a4f37, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3381747832091186833, guid: 5fe93c31e7db1f7418f5c63d5f0a4f37, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2085,14 +2089,6 @@ PrefabInstance:
     - target: {fileID: 5983759552728983554, guid: 5fe93c31e7db1f7418f5c63d5f0a4f37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7478530720140325096, guid: 5fe93c31e7db1f7418f5c63d5f0a4f37, type: 3}
-      propertyPath: _delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8264714345911732704, guid: 5fe93c31e7db1f7418f5c63d5f0a4f37, type: 3}
-      propertyPath: _spellKey
-      value: 113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
